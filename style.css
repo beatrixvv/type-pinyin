@@ -59,6 +59,7 @@ body {
 
 #copy-button {
   background-color: var(--background-color);
+  color: var(--text-color);
   border: 0.1em solid var(--background-color);
   border-radius: 2em;
   padding: 0.8em;
@@ -78,6 +79,7 @@ body {
 
 #original-text {
   background: none;
+  color: var(--text-color);
   border: 0.1em solid var(--background-color);
   height: var(--textbox-height);
   width: var(--textbox-width);
@@ -94,6 +96,7 @@ body {
 
 #clear-button {
   background-color: var(--background-color);
+  color: var(--text-color);
   border: 0.1em solid var(--background-color);
   border-radius: 2em;
   padding: 0.8em;
