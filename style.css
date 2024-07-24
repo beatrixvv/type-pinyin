@@ -1,0 +1,119 @@
+/* Large screen  */
+@media (max-width: 1400px) {
+  html {
+    font-size: 20px;
+  }
+}
+
+/* Tablet screen  */
+@media (max-width: 768px) {
+  html {
+    font-size: 15px;
+  }
+}
+
+/* Mobile screen  */
+@media (max-width: 450px) {
+  html {
+    font-size: 12px;
+  }
+}
+
+body {
+  --background-color: hsl(0, 10%, 28%);
+  --body-color: hsl(0, 11%, 37%);
+  --text-color: hsl(222, 100%, 96%);
+
+  background-color: var(--background-color);
+  color: var(--text-color);
+  margin: 0;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-family: "Times New Roman", Times, serif;
+}
+
+.title {
+  font-size: 2rem;
+}
+
+.main {
+  --textbox-height: 10vmin;
+  --textbox-width: 80vmin;
+
+  margin: 2em;
+  padding: 1em;
+  font-size: 1rem;
+  background-color: var(--body-color);
+  border-radius: 1.5em;
+}
+
+#result-text {
+  height: var(--textbox-height);
+  width: var(--textbox-width);
+  padding: 0.5em;
+  overflow-y: auto;
+}
+
+#copy-button {
+  background-color: var(--background-color);
+  border: 0.1em solid var(--background-color);
+  border-radius: 2em;
+  padding: 0.8em;
+  margin: 1em 0.5em;
+  cursor: pointer;
+  transition: 200ms scale ease-in-out;
+}
+
+#copy-button:hover {
+  scale: 1.1;
+}
+
+.original {
+  display: flex;
+  flex-direction: column;
+}
+
+#original-text {
+  background: none;
+  border: 0.1em solid var(--background-color);
+  height: var(--textbox-height);
+  width: var(--textbox-width);
+  resize: none;
+  padding: 0.5em;
+  margin-top: 0.5em;
+  font-size: 0.8rem;
+}
+
+#original-text:focus {
+  box-shadow: 0 0 10px var(--background-color);
+  outline: none;
+}
+
+#clear-button {
+  background-color: var(--background-color);
+  border: 0.1em solid var(--background-color);
+  border-radius: 2em;
+  padding: 0.8em;
+  margin: 1em 0.5em;
+  cursor: pointer;
+  width: fit-content;
+  transition: 200ms scale ease-in-out;
+}
+
+#clear-button:hover {
+  scale: 1.1;
+}
+
+::-webkit-scrollbar {
+  background-color: var(--background-color);
+  border-radius: 0.5rem;
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: var(--body-color);
+  border: 0.01rem solid var(--text-color);
+  border-radius: 2rem;
+}
