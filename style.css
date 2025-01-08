@@ -57,19 +57,22 @@ body {
   overflow-y: auto;
 }
 
-#copy-button {
+#result-text:fullscreen {
   background-color: var(--background-color);
-  color: var(--text-color);
-  border: 0.1em solid var(--background-color);
-  border-radius: 2em;
-  padding: 0.8em;
-  margin: 1em 0.5em;
-  cursor: pointer;
-  transition: 200ms scale ease-in-out;
+  font-size: 1.5em;
+  padding: 20px;
 }
 
-#copy-button:hover {
-  scale: 1.1;
+.result-line {
+  display: flex;
+  gap: 0.5em;
+}
+
+.word-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }
 
 .original {
@@ -94,29 +97,64 @@ body {
   outline: none;
 }
 
-#clear-button {
+.options {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.right-options {
+  display: flex;
+}
+
+button,
+.input-img-container {
+  font-size: 0.7rem;
   background-color: var(--background-color);
   color: var(--text-color);
+  width: fit-content;
   border: 0.1em solid var(--background-color);
   border-radius: 2em;
   padding: 0.8em;
   margin: 1em 0.5em;
   cursor: pointer;
-  width: fit-content;
-  transition: 200ms scale ease-in-out;
+  transition: 200ms opacity ease-in-out;
 }
 
-#clear-button:hover {
-  scale: 1.1;
+button:hover,
+.input-img-container:hover {
+  opacity: 0.7;
+}
+
+.tooltip {
+  position: relative;
+}
+
+.tooltip .tooltip-text {
+  visibility: hidden;
+  background-color: var(--background-color);
+  color: var(--text-color);
+  text-align: center;
+  padding: 0.3em;
+  position: absolute;
+  bottom: 100%;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 1;
+  opacity: 0;
+  transition: opacity 0.2s;
+}
+
+.tooltip-text.visible {
+  visibility: visible;
+  opacity: 1;
 }
 
 ::-webkit-scrollbar {
   background-color: var(--background-color);
-  border-radius: 0.5rem;
 }
 
 ::-webkit-scrollbar-thumb {
   background-color: var(--body-color);
   border: 0.01rem solid var(--text-color);
-  border-radius: 2rem;
 }
