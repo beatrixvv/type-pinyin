@@ -5,6 +5,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="style.css" />
     <script src="script.js" defer></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+    <!-- OCR & pinyin -->
+    <script src='https://cdn.jsdelivr.net/npm/tesseract.js@5/dist/tesseract.min.js'></script>
     <script src="https://unpkg.com/pinyin-pro"></script>
     <title>Pinyin Converter</title>
   </head>
@@ -13,13 +16,34 @@
     <div class="main">
       <div class="result">
         <div id="result-text"></div>
-        <button id="copy-button">Copy</button>
+        <div class="options">
+          <div class="left-options">
+            <input type="checkbox" id="show-hanzi">
+            <label for="show-hanzi"> Show hanzi</label><br>
+          </div>
+          <div class="right-options">
+            <div class="tooltip">
+              <button id="copy-button"><i class="bi bi-copy"></i></button>
+              <span id="copy-tooltip" class="tooltip-text">Copied!</span>
+            </div>
+            <button id="full-screen"><i class="bi bi-arrows-fullscreen"></i></button>
+          </div>
+        </div>
       </div>
       <div class="original">
         <textarea name="original-text" id="original-text">
-下班吧&#10xia4 ban1 ba5</textarea
-        >
-        <button id="clear-button">Clear</button>
+下班吧&#10xia4 ban1 ba5</textarea>
+          <div class="options">
+            <div class="left-options">
+              <div class="input-img-container">
+                <label for="input-img" style="cursor: pointer;">Upload image</label>
+                <input type="file" id="input-img" style="display: none;" accept="image/*"/>
+              </div>
+            </div>
+            <div class="right-options">
+              <button id="clear-button">Clear</button>
+            </div>
+          </div>
       </div>
     </div>
   </body>
